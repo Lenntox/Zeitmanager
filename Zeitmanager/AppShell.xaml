@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Zeitmanager.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Zeitmanager"
+    Shell.NavBarIsVisible="True"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutIcon="menu_icon.png">
+
+    <FlyoutItem Title="Today">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="ToDo-List">
+        <ShellContent ContentTemplate="{DataTemplate local:ToDoListPage}" />
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Meetings">
+        <ShellContent ContentTemplate="{DataTemplate local:MeetingListPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="FaQ">
+        <ShellContent ContentTemplate="{DataTemplate local:FaQPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Impressum">
+        <ShellContent ContentTemplate="{DataTemplate local:FaQPage}" />
+    </FlyoutItem>
+
+</Shell>

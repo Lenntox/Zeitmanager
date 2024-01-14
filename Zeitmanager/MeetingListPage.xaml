@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeitmanager.MeetingListPage">
+    <Shell.TitleView>
+        <Image Source="ts_logo.png"
+           HorizontalOptions="End"
+           VerticalOptions="Center" HeightRequest="40" Margin="0,0,10,0"/>
+    </Shell.TitleView>
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Border Stroke="Transparent"
+            StrokeThickness="2"
+            StrokeShape="RoundRectangle 10,10,10,10" VerticalOptions="Start"
+            HorizontalOptions="Center">
+            <Grid BackgroundColor="#004fff" WidthRequest="350" HeightRequest="700">
+                <Label Text="Meetings:" TextColor="White" TextDecorations="Underline" Padding="10" FontSize="Large"/>
+                <Button Clicked="AddMeeting" HorizontalOptions="End" Text="Create New" VerticalOptions="Start" Margin="10"/>
+                <ListView x:Name="MeetingList" Margin="0,60,0,0" SelectionMode="None" SeparatorColor="Transparent">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid WidthRequest="350" Padding="5">
+                                    <Entry WidthRequest="150" Margin="15,0,0,0" FontSize="Medium" TextColor="White" Text="{Binding Title}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <DatePicker Margin="0,0,50,0" MaximumWidthRequest="120" FontSize="Medium" TextColor="White" Date="{Binding Date}" HorizontalOptions="End" VerticalOptions="Center" DateSelected="OnDateSelected"/>
+                                    <Button Clicked="OnDeleteButtonClicked" HorizontalOptions="End" ImageSource="trash_can.png" MaximumWidthRequest="15" BackgroundColor="Transparent" Padding="5"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="30"
+                Opacity="0.8" />
+            </Border.Shadow>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

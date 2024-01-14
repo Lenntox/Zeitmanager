@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeitmanager.FaQPage">
+    <Shell.TitleView>
+        <Image Source="ts_logo.png"
+           HorizontalOptions="End"
+           VerticalOptions="Center" HeightRequest="40" Margin="0,0,10,0" />
+    </Shell.TitleView>
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Border Stroke="Transparent"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 10,10,10,10" VerticalOptions="Start"
+        HorizontalOptions="Center">
+            <VerticalStackLayout BackgroundColor="#004fff" WidthRequest="350" HeightRequest="700" Padding="10">
+                <Label TextColor="White" FontAttributes="Bold" Text="Häufig gestellte Fragen (FAQ) für TimeSync:" FontSize="Medium" />
+                <Label TextColor="White" FontAttributes="Bold" Text="Was ist TimeSync und welche Funktionen bietet die App?" FontSize="Small"/>
+                <Label TextColor="White" Text="TimeSync ist eine benutzerfreundliche App mit einer einfachen To-Do-Liste und einer Meeting-Liste. Sie ermöglicht das Erstellen, Bearbeiten und Löschen von Aufgaben und Meetings für eine effiziente Organisation."/>
+                <Label TextColor="White" FontAttributes="Bold" Text="Wie erstelle ich eine neue Aufgabe in der To-Do-Liste?" FontSize="Small"/>
+                <Label TextColor="White" Text="Öffnen Sie die To-Do-Liste in TimeSync, tippen Sie auf 'Create New', geben Sie den Aufgabentitel ein um die Aufgabe zu erstellen."/>
+                <Label TextColor="White" FontAttributes="Bold" Text="Kann ich Aufgaben in der To-Do-Liste bearbeiten?" FontSize="Small"/>
+                <Label TextColor="White" Text="Öffnen Sie die To-Do-Liste in TimeSync, tippen Sie auf den Titel der Aufgabe die Sie bearbeiten möchten."/>
+                <Label TextColor="White" FontAttributes="Bold" Text="Wie lösche ich eine Aufgabe aus der To-Do-Liste?" FontSize="Small"/>
+                <Label TextColor="White" Text="Öffnen Sie die To-Do-Liste in TimeSync, tippen Sie auf das Mülleimer-Symbol auf der rechten Seite."/>
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" TextColor="White" Text="Bei weiteren Fragen Kontaktieren sie uns:" FontSize="20" Margin="0,5,0,0"/>
+
+                    <Entry TextColor="White" Placeholder="Your Name" x:Name="NameEntry" />
+                    <Entry TextColor="White" Placeholder="Your Email" x:Name="EmailEntry" />
+                    <Editor TextColor="White" Placeholder="Your Message" x:Name="MessageEditor" HeightRequest="50" />
+
+                    <Button TextColor="White" Text="Submit" Clicked="OnSubmitClicked" HorizontalOptions="CenterAndExpand" Margin="0,5,0,0"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="30"
+                Opacity="0.8" />
+            </Border.Shadow>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

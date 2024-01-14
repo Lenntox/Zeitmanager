@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zeitmanager.MainPage">
+    <Shell.TitleView>
+        <Image Source="ts_logo.png"
+           HorizontalOptions="End"
+           VerticalOptions="Center" HeightRequest="40" Margin="0,0,10,0" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Border Stroke="Transparent"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 10,10,10,10" VerticalOptions="Start"
+        HorizontalOptions="Center">
+            <Grid BackgroundColor="#004fff" WidthRequest="350" HeightRequest="300" >
+                <Label Text="To Do:" TextColor="White" TextDecorations="Underline" Padding="10" FontSize="Large"/>
+                <Label Text="See All" TextDecorations="Underline" HorizontalOptions="End" VerticalOptions="Start" Margin="10" TextColor="White" FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnToDoSeeAllTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <ListView x:Name="todoList" Margin="0,50,0,0" SelectionMode="None" SeparatorColor="Transparent" IsRefreshing="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid WidthRequest="350" Padding="5">
+                                    <CheckBox IsChecked="{Binding isChecked}" Color="White" HorizontalOptions="Start"></CheckBox>
+                                    <Label Margin="50,0,0,0" FontSize="Medium" TextColor="White" Text="{Binding Title}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="30"
+                Opacity="0.8" />
+            </Border.Shadow>
+        </Border>
+        <Border Stroke="Transparent"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 10,10,10,10" VerticalOptions="Start"
+        HorizontalOptions="Center">
+            <Grid BackgroundColor="#004fff" WidthRequest="350" HeightRequest="300">
+                <Label Text="Meetings:" TextColor="White" TextDecorations="Underline" Padding="10" FontSize="Large"/>
+                <Label Text="See All" TextDecorations="Underline" HorizontalOptions="End" VerticalOptions="Start" Margin="10" TextColor="White" FontSize="Medium">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMeetingSeeAllTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <ListView x:Name="meetingList" Margin="0,60,0,0" SelectionMode="None" SeparatorColor="Transparent" IsRefreshing="True">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid WidthRequest="350" Padding="5">
+                                    <Label Margin="15,0,0,0" FontSize="Medium" TextColor="White" Text="{Binding Title}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Margin="0,0,15,0" FontSize="Medium" TextColor="White" Text="{Binding Date}" HorizontalOptions="End" VerticalOptions="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="30"
+                Opacity="0.8" />
+            </Border.Shadow>
+        </Border>
+    </VerticalStackLayout>
+
+</ContentPage>
