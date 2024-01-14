@@ -15,7 +15,7 @@
             <Grid BackgroundColor="#004fff" WidthRequest="350" HeightRequest="700">
                 <Label Text="Meetings:" TextColor="White" TextDecorations="Underline" Padding="10" FontSize="Large"/>
                 <Button Clicked="AddMeeting" HorizontalOptions="End" Text="Create New" VerticalOptions="Start" Margin="10"/>
-                <ListView x:Name="MeetingList" Margin="0,60,0,0" SelectionMode="None" SeparatorColor="Transparent">
+                <ListView x:Name="MeetingList" Margin="0,60,0,0" SelectionMode="None" SeparatorColor="Transparent" IsRefreshing="True">
                     <ListView.ItemTemplate >
                         <DataTemplate>
                             <ViewCell>

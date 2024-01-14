@@ -7,7 +7,27 @@
            HorizontalOptions="End"
            VerticalOptions="Center" HeightRequest="40" Margin="0,0,10,0"/>
     </Shell.TitleView>
-    <VerticalStackLayout>
-      
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Border Stroke="Transparent"
+    StrokeThickness="2"
+    StrokeShape="RoundRectangle 10,10,10,10" VerticalOptions="Start"
+    HorizontalOptions="Center">
+            <VerticalStackLayout BackgroundColor="#004fff" WidthRequest="350" HeightRequest="700" Padding="10">
+                <Label TextColor="White" FontAttributes="Bold" Text="Impressum:" FontSize="Small"/>
+                <Label TextColor="White" Text="TimeSync Entwickler und Verantwortlicher: Jamie Bläsi, Murtenstrasse 53 3202 Frauenkappelen, jbl140397@stud.gibb.ch"/>
+                <Image Source="programmer.jpg" MaximumWidthRequest="300"/>
+                <Label TextColor="White" FontAttributes="Bold" Text="Rechtliche Hinweise:" FontSize="Small"/>
+                <Label TextColor="White" Text="Diese App dient ausschließlich dem persönlichen Gebrauch und ist nicht für geschäftliche oder kommerzielle Zwecke bestimmt. Jegliche kommerzielle Nutzung oder Vertrieb der App ohne vorherige schriftliche Zustimmung des Entwicklers ist untersagt."/>
+                <Label TextColor="White" FontAttributes="Bold" Text="Datenschutz:" FontSize="Small"/>
+                <Label TextColor="White" Text="Die App speichert Daten lokal auf Ihrem Gerät und übermittelt keine persönlichen Informationen an Dritte. Beachten Sie jedoch, dass persönliche Daten, die Sie in der App eingeben, lokal auf Ihrem Gerät gespeichert werden und nicht verschlüsselt sind."/>
+
+            </VerticalStackLayout>
+            <Border.Shadow>
+                <Shadow Brush="Black"
+            Offset="5,5"
+            Radius="30"
+            Opacity="0.8" />
+            </Border.Shadow>
+        </Border>
     </VerticalStackLayout>
 </ContentPage>

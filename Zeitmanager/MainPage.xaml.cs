@@ -22,5 +22,13 @@ namespace Zeitmanager
         {
             Navigation.PushAsync(new MeetingListPage());
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            todoList.ItemsSource = ToDoItemList.getToDoList().Take(4);
+            meetingList.ItemsSource = MeetingItemList.getMeetings().Take(6);
+        }
     }
 }

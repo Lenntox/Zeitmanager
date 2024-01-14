@@ -25,7 +25,7 @@
     </FlyoutItem>
 
     <FlyoutItem Title="Impressum">
-        <ShellContent ContentTemplate="{DataTemplate local:FaQPage}" />
+        <ShellContent ContentTemplate="{DataTemplate local:ImpressumPage}" />
     </FlyoutItem>
 
 </Shell>
